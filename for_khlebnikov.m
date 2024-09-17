@@ -68,7 +68,7 @@ DD = [D; D+L*D1];
 AA = [A+B*K, -B*K; zeros(n,n), A-L*C1];
 
 % Матрица оптимального эллипсоида
-P = dlyap(AA,a/(1-a)*DD*DD',[],sqrt(a)*eye(2*n)); 
+P = dlyap(AA/sqrt(a),1/(1-a)*DD*DD'); 
 
 % Размер оптимального эллипсоида
 tr_opt = trace(CC*P*CC') 
